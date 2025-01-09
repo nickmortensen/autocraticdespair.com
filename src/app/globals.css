@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --orange: #f7941d;
+  --navy: #0f204c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+
+  color: var(--foreground);
+  background: var(--background);
+  font-family: system-ui, Helvetica, sans-serif;
+}
+
+
+.poster {
+	@apply border-[18px] aspect-[2/3] w-2/3 flex flex-col relative;
+	border-color: var(--navy);
+	background: var(--orange);
+
+	span {
+		@apply w-full bg-red-200;
+
+	}
+
+}
+
+
+#moonmaiden  {
+	@apply aspect-square;
+	path {
+		fill: rgba(255 255 255/.4);
+	}
+}
