@@ -30,7 +30,11 @@ body {
 	background: var(--orange);
 
 	span {
-		@apply w-full bg-red-200;
+		@apply w-full text-center uppercase font-black font-sans text-[85px];
+
+		&:nth-of-type(2n) {
+			color: red;
+		}
 
 	}
 
