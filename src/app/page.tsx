@@ -20,7 +20,7 @@ export default function Home() {
 </svg>
 
 
-<div className="writing">
+<div className="writing flex-col">
 <span>resist</span><span>autocratic</span><span>despair</span>
 
 </div>
