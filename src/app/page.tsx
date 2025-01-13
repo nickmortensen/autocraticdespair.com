@@ -33,6 +33,7 @@ export default function Home() {
 		.
 		</li>
 		<li>Save and see your changes instantly.</li>
+		<li>this is from the actions-runner folder</li>
 	</ol>
 
 		<div className="flex gap-4 items-center flex-col sm:flex-row">
