@@ -6,6 +6,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --orange: #f7941d;
+  --orange: #f7781d;
   --navy: #0f204c;
 }
 
@@ -17,8 +18,8 @@
 }
 
 body {
-
   color: var(--foreground);
+  color: var(--navy);
   background: var(--background);
   font-family: system-ui, Helvetica, sans-serif;
 }
@@ -46,4 +47,76 @@ body {
 	path {
 		fill: rgba(255 255 255/.4);
 	}
+}
+
+
+#wordmark {
+
+	/* .word path {
+		fill: inherit;
+
+	} */
+	& path, polygon {
+		fill: inherit;
+	}
+	.cls-1 {
+		stroke: #231f20;
+		stroke-miterlimit: 10;
+	  }
+
+	.cls-2 {
+		fill: #0f204c;
+	  }
+
+	  .cls-3 {
+		isolation: isolate;
+	  }
+
+	  .rectangle {
+		@apply fill-yellow-300;
+	  }
+
+	  .cls-5 {
+		mix-blend-mode: lighten;
+		opacity: .9;
+	  }
+
+
+.bottom_rectangle {
+	@apply fill-red-700;
+}
+
+}
+
+
+.fill-orange { fill: var(--orange); }
+.fill-navy { fill: var(--navy); }
+
+
+.event-container {
+	@apply p-4 border border-zinc-300 rounded-xl shadow-lg mt-4 lg:mt-[-40px];
+	margin-top: 3.5ch;
+	position: relative;
+
+	&::after,
+	&::before {
+		@apply text-sm;
+		position: absolute;
+		font-weight: bolder;
+		top: -15px;
+		top: -2.15ch;
+		content: "UPCOMING EVENT";
+
+	}
+	&::after {
+		@apply p-4 py-1 rounded-lg;
+		color: white;
+		background: var(--navy);
+		right: 0;
+		content: attr(data-event);
+	}
+}
+
+footer {
+	min-height: 180px;
 }
