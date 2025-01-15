@@ -42,9 +42,6 @@ const pageContent = [
 					"Join us for an in-person gathering where we delve into the complexities of autocracy and its impact on our lives.",
 					"This event offers a supportive space to learn about the rise of autocratic regimes and to develop practical strategies for coping with the despair and anxiety that often accompany such political shifts.",
 					"Engage in meaningful discussions, share experiences, and build a community of resilience and hope.",
-
-
-
 				]
 			}
 		]
@@ -52,3 +49,5 @@ const pageContent = [
 ]
 
 export default pageContent
+
+

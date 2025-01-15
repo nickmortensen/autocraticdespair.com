@@ -1,5 +1,12 @@
+export const headerNavLinks = [
+	{ href: '/', title: 'Home' },
+	{ href: '/blog', title: 'Blog' },
+	{ href: '/projects', title: 'Projects' },
+	{ href: '/about', title: 'About' },
+  ]
+
 // @link https://github.com/timlrx/tailwind-nextjs-starter-blog/tree/main/public
-const siteMetadata = {
+export const siteMetadata = {
 	title: 'Autocratic Despair Website',
 	author: 'Nick Mortensen',
 	headerTitle: 'AutocraticDespair',
@@ -100,4 +107,3 @@ const siteMetadata = {
 	},
   }
 
-  module.exports = siteMetadata

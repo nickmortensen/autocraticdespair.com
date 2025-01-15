@@ -1,4 +1,3 @@
-import Image from "next/image";
 import DialogueEvent from "@/components/Event/Event"
 import pageContent from "@/content/pagecontent"
 import WordMark from "@/components/SVG/SVG"

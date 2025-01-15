@@ -12,25 +12,13 @@ function sanitizeString( str: string ) {
 	return str.trim(); // Trim leading and trailing spaces
   }
 
-export function sanitizeEntry( entry: string ) : string {
-	const map: any = {
-		"&": "&amp;",
-		"<": "&lt;",
-		">": "&gt;",
-		"\"": "&quot;",
-		"'": "&#39;",
-		"/": "&#47;"
-	};
-	const reg          = /[&<>"']/ig;
-	let output: string =  entry.replace( reg, ( match) => map[ match ] );
-	return sanitizeString( output )
 
-}
 /**
  *
  * @param phone string The phone number to use
  * @returns string A formatted phone number
  */
 export function phoneFormat( phone: string ) {
-	return phone.replace( /\D/g, '' ).slice(-10).match( /^(\d{3})(\d{3})(\d{4})$/ );
+	const number = sanitizeString( phone )
+	return number.replace( /\D/g, '' ).slice(-10).match( /^(\d{3})(\d{3})(\d{4})$/ );
 }
