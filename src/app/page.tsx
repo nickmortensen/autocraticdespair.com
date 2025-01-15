@@ -1,6 +1,7 @@
 import DialogueEvent from "@/components/Event/Event"
 import pageContent from "@/content/pagecontent"
 import WordMark from "@/components/SVG/SVG"
+import {AccordionFP} from "@/components/Accordion/Accordion"
 import { cn } from "@/lib/utility"
 export default function Home() {
   return (
@@ -46,6 +47,22 @@ export default function Home() {
 	<p className="mt-4 text-base font-light">
 	{pageContent[0].subhead}
 	</p>
+
+<aside className={ cn(
+					"w-10/12 mx-auto mt-8",
+					"shadow-2xl",
+					"" ) }>
+	<h3 className={ cn(
+						"text-2xl font-bold bg-sky-900 text-white ",
+						"p-2",
+						"" ) }>What We Offer:</h3>
+						<div className="px-4">
+						<AccordionFP />
+
+						</div>
+</aside>
+
+
 	</div>
 
 	<div className={ cn(
@@ -55,7 +72,7 @@ export default function Home() {
 						"order-1" ) }>
 
 		<DialogueEvent
-			title="Autocratic Despair Dialogues"
+			title="Autocratic Despair Dialogues: Inauguration"
 			 />
 
 

@@ -9,22 +9,27 @@ const pageContent = [
 					type: "definition",
 					items: [
 						{
+							identifier: "12",
 							term: "Educational Resources",
 							definition: "Understand the signs of authoritarianism and learn about its impact on society."
 						},
 						{
+							identifier: "3d",
 							term: "Support Networks",
 							definition: "Connect with like-minded individuals and groups who share your concerns and are working towards positive change"
 						},
 						{
+							identifier: "97",
 							term: "Action Plans",
 							definition: "Discover practical steps you can take to protect your rights and freedoms."
 						},
 						{
+							identifier: "86",
 							term: "Mental Health Support",
 							definition: "Access resources and advice to maintain your mental well-being in the face of political stress."
 						},
 						{
+							identifier: "f6",
 							term: "",
 							definition: ""
 						},
