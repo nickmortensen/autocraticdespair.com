@@ -50,3 +50,7 @@ ALTERATIONS
 Moved
 Studio
 to
+
+*.backup
+
+public/icons/resist_square.svg

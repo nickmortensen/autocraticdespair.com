@@ -20,12 +20,29 @@ export interface EventProperties {
 const DialogueEvent = ( {
 	title="Autocratic Display Dialogues",
 	subtitle="A monthly discussion group about how to survive in a country gone mad",
-	time="Monday Jan 20, 2024 6pm"
+	time="Monday Jan 20, 2025 6pm"
 }: EventProperties) => {
 	return (
 		<div
 			vocab="https://schema.org/"
-			className="event-container"
+			className={ cn(
+								"relative",
+								"p-8 mt-18 lg:-mt-10",
+								"border border-zinc-200",
+								"rounded-xl shadow-lg",
+								"before:content-[attr(data-event)]",
+								"before:text-white before:bg-primary",
+								"before:font-semibold",
+								"before:p-4 before:py-2 before:rounded-xl",
+								"before:absolute before:right-1 before:-top-6",
+								"after:absolute after:left-1 after:-top-6",
+								"after:content-['Upcoming_Event'] after:bg-accent",
+								"after:px-4 after:py-2",
+								"after:rounded-xl",
+								"after:tracking-wider",
+								"after:font-semibold",
+								"after:border-2 after:border-primary",
+								"" ) }
 			typeof="Event"
 			data-event={time}
 		>

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 	  template: '%s | Resist Autocratic Despair',
 	  default: 'Resist Autocratic Despair',
 	},
-	metadataBase: new URL('https://localhost:3000'),
+	metadataBase: new URL('https://www.autocraticdespair.com'),
 	alternates: {
 	  canonical: '/',
 	},
