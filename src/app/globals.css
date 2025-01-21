@@ -172,6 +172,10 @@ body {
 
 footer {
 	min-height: 180px;
+
+	.footer-navigation {
+			@apply flex gap-4 font-semibold;
+	}
 }
 
 

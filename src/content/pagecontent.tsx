@@ -52,7 +52,23 @@ const pageContent = [
 		]
 	}
 ]
-
+interface Location {
+	name: string,
+	address: string,
+	city: string,
+	state: string,
+	zip: string,
+	additional?: string
+}
+const locations: Location[] = [
+	{
+		name: "Brown County Library - Downtown Branch",
+		additional: "lower level",
+		address: "515 Pine Street",
+		city: "Green Bay",
+		state: "WI",
+		zip: "54301",
+	}]
 export default pageContent
 
 
