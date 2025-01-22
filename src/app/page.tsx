@@ -1,10 +1,10 @@
-import DialogueEvent from "@/components/Event/Event"
-import Image from "next/image"
 import pageContent from "@/content/pagecontent"
 import Header from "@/components/Header/Header"
 import Footer from "@/components/Footer/Footer"
 import {AccordionFP} from "@/components/Accordion/Accordion"
 import { cn } from "@/lib/utility"
+// import DialogueEvent from "@/components/Event/Event"
+// import Image from "next/image"
 export default function Home() {
   return (
 <>
@@ -27,7 +27,18 @@ export default function Home() {
 					<h1 className={ cn( "text-3xl xl:text-4xl ", "font-semibold", "order-1" ) }>{pageContent[0].heading}</h1>
 					<p className="mt-4 text-base font-light"> {pageContent[0].subhead} </p>
 
-					<aside className={ cn(
+
+
+				</div>
+
+				<div className={ cn(
+								"w-full lg:w-1/2",
+								"px-4",
+								"",
+								"order-1" ) }>
+
+
+<aside className={ cn(
 										"w-10/12 mx-auto mt-8",
 										"shadow-2xl",
 										"" ) }>
@@ -39,16 +50,7 @@ export default function Home() {
 							<AccordionFP />
 						</div>
 					</aside>
-
-				</div>
-
-				<div className={ cn(
-								"w-full lg:w-1/2",
-								"px-4",
-								"",
-								"order-1" ) }>
-
-					<DialogueEvent title="Autocratic Despair Dialogues: Inauguration" />
+					{/* <DialogueEvent title="Autocratic Despair Dialogues: Inauguration" /> */}
 				</div>
 
 			</section>

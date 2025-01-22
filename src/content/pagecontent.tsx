@@ -1,4 +1,4 @@
-const pageContent = [
+const pageContent =  [
 	{
 		heading: "Welcome to AutocraticDespair.com",
 		subhead: "In an era where authoritarianism is on the rise, it’s easy to feel overwhelmed and powerless. AutocraticDespair.com is your sanctuary, a place where you can find support, resources, and community to help you navigate these challenging times. Our mission is to empower individuals with knowledge, tools, and strategies to cope with and resist the encroachment of authoritarian governance in the USA.",
@@ -52,6 +52,7 @@ const pageContent = [
 		]
 	}
 ]
+/*
 interface Location {
 	name: string,
 	address: string,
@@ -60,6 +61,7 @@ interface Location {
 	zip: string,
 	additional?: string
 }
+
 const locations: Location[] = [
 	{
 		name: "Brown County Library - Downtown Branch",
@@ -69,6 +71,6 @@ const locations: Location[] = [
 		state: "WI",
 		zip: "54301",
 	}]
+*/
+
 export default pageContent
-
-
