@@ -179,13 +179,13 @@ body {
 #resist-autocratic-despair.with-background {
 	--contrast:   #0F204C;  /* navy */
 	--primary: #F7781D; /*  orange */
-	--neutral:  HSL( 0 0% 94.5% );  /* light-gray */
+	--neutral:  HSL( 0 0% 89.4% );  /* light-gray */
 	--secondary: #FFFFFF; /* white */
 }
 #resist-autocratic-despair {
 	--primary:   #0F204C;  /* navy */
 	--contrast: #F7781D; /*  orange */
-	--neutral:  HSL( 0 0% 94.5% );  /* light-gray */
+	--neutral:  HSL( 0 0% 89.4% );  /* light-gray */
 	--secondary: #FFFFFF; /* white */
 
 	enable-background: new 0 0 800 800;

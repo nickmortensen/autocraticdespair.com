@@ -5,62 +5,65 @@ import {AccordionFP} from "@/components/Accordion/Accordion"
 import { cn } from "@/lib/utility"
 // import DialogueEvent from "@/components/Event/Event"
 // import Image from "next/image"
+
+
+
+
+const HeaderArea = () => {
+
+	return (
+		<div className={ cn(
+			"px-4 mb-8",
+			"w-full",
+			"order-0 " ) }>
+
+		<h1 className={ cn( "text-2xl lg:text-3xl xl:text-4xl ", "font-extrabold", "" ) }>{pageContent[0].heading}</h1>
+		<p className="mt-4 text-base font-light"> {pageContent[0].subhead} </p>
+	</div>
+
+	)
+}
+
 export default function Home() {
   return (
 <>
-	<Header />
-		<main className="flex gap-8 row-start-2 items-center sm:items-start  w-full">
-			<section
-				className={ cn(
-							"mt-[40px]",
-							"w-full px-4",
-							"flex items-start",
-							"flex-col lg:flex-row",
-							"gap-4" )
-			}>
-
-				<div className={ cn(
-										"px-4 ",
-										"w-full lg:w-1/2",
-										"order-0" ) }>
-
-					<h1 className={ cn( "text-3xl xl:text-4xl ", "font-semibold", "order-1" ) }>{pageContent[0].heading}</h1>
-					<p className="mt-4 text-base font-light"> {pageContent[0].subhead} </p>
 
 
+	<main
+	className="flex justify-center mt-8">
+		<section
+			className={ cn(
+						"w-full max-w-screen-2xl",
+						"px-8",
+						"flex items-start",
+						"flex-col md:flex-row",
+						"gap-8" )
+		}>
 
-				</div>
+		<div className={ cn( "", "order-2 md:order-1", "lg:max-w-screen-md" ) } >
 
-				<div className={ cn(
-								"w-full lg:w-1/2",
-								"px-4",
-								"",
-								"order-1" ) }>
+			<HeaderArea />
+			{ /* ACCORDION WITH A HEADING */}
+			<AccordionFP heading=""/>
+		</div>
 
 
-<aside className={ cn(
-										"w-10/12 mx-auto mt-8",
-										"shadow-2xl",
-										"" ) }>
-						<h3 className={ cn(
-											"text-2xl font-bold bg-sky-900 text-white ",
-											"p-2",
-											"" ) }>What We Offer:</h3>
-						<div className="px-4 pb-6">
-							<AccordionFP />
-						</div>
-					</aside>
-					{/* <DialogueEvent title="Autocratic Despair Dialogues: Inauguration" /> */}
-				</div>
+		{/* LOGO */}
+		<div className={ cn( "order-1 md:order-2", "w-full flex items-center justify-center", "" ) } >
+			<Header />
+		</div>
 
-			</section>
-		</main>
+	</section>
+</main>
 
 
 
 
 <Footer />
 
+
 </>
+
+
   );
 }

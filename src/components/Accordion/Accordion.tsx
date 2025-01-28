@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utility"
 import {
 	Accordion,
 	AccordionContent,
@@ -10,14 +11,17 @@ type FrontPageAccordionItems = {
 	term: string,
 	definition: string,
 }
+type AccordionFPProperties = {
+	heading: string,
+}
 
 
 export function AccordionDemo() {
 	return (
 		<Accordion type="single" collapsible className="w-full">
-		<AccordionItem value="item-1">
-			<AccordionTrigger>Is it accessible?</AccordionTrigger>
-			<AccordionContent>
+			<AccordionItem value="item-1">
+				<AccordionTrigger>Is it accessible?</AccordionTrigger>
+				<AccordionContent>
 			Yes. It adheres to the WAI-ARIA design pattern.
 			</AccordionContent>
 		</AccordionItem>
@@ -40,7 +44,7 @@ export function AccordionDemo() {
 }
 
 
-export function AccordionFP() {
+export function AccordionFP( { heading }: AccordionFPProperties) {
 	const accordionItems: FrontPageAccordionItems[] = 	[
 		{
 			identifier: "12",
@@ -70,6 +74,12 @@ export function AccordionFP() {
 	]
 
 	return (
+		<>
+		<h3 className={ cn(
+							"text-2xl font-extrabold bg-sky-900 text-white ",
+							"p-2",
+							"" ) }>{heading}</h3>
+
 		<Accordion type="single" collapsible className="w-full">
 			{ accordionItems.map( ( { identifier, term, definition } ) => (
 			<AccordionItem
@@ -85,5 +95,7 @@ export function AccordionFP() {
 
 				) )}
 		</Accordion>
+
+</>
 	)
 }
