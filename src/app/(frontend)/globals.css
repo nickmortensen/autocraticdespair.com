@@ -1,0 +1,192 @@
+@import 'tailwindcss';
+
+@config '../../../tailwind.config.mjs';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: auto;
+    font-weight: auto;
+  }
+
+
+
+  :root {
+    --navy: #0f204c;
+    --navy-hsl: 223.3 67% 17.8%;
+    --orange: #F7781D;
+    --orange-hsl: 25 93.2% 54.1%;
+    --color-blue-950: var(--navy);
+    --background: 0 0% 100%;      /* white */
+    --foreground: 222.2 84% 4.9%; /* black */
+    --foreground: 223.3 67% 17.8%; /* NAVY */
+
+    --card: 240 5% 96%; /* Light grayish blue */
+    --card-foreground: 222.2 84% 4.9%; /*  Very dark (mostly black) blue */
+
+    --popover: 0 0% 100%; /* white */
+    --popover-foreground: 222.2 84% 4.9%; /*  Very dark (mostly black) blue */
+
+    --primary: 222.2 47.4% 11.2%; /*  Very dark (mostly black) blue */
+    --primary:  223.3 67% 17.8%; /* navy */
+
+    --primary-foreground: 210 40% 98%; /* Light grayish blue. */
+
+    --secondary: 210 40% 96.1%; /* Light grayish blue. */
+    --secondary-foreground: 222.2 47.4% 11.2%; /*  Very dark (mostly black) blue */
+
+    --muted: 210 40% 96.1%; /* Light grayish blue. */
+    --muted-foreground: 215.4 16.3% 46.9%; /* Mostly desaturated dark blue. */
+
+    --accent: 210 40% 96.1%; /* Light grayish blue. */
+    --accent-foreground: 222.2 47.4% 11.2%; /*  Very dark (mostly black) blue */
+    --accent-foreground: 223.3 67% 17.8%; /* NAVY */
+
+    --destructive: 0 84.2% 60.2%; /* Bright red. */
+    --destructive-foreground: 210 40% 98%; /* Light grayish blue. */
+
+    --border: 240 6% 80%; /* Grayish blue. */
+    --input: 214.3 31.8% 91.4%; /* Light subtle blue */
+    --ring: 222.2 84% 4.9%; /*  Very dark (mostly black) blue */
+
+    --radius: 0.2rem;
+
+    --success: 196 52% 74%; /*  Very soft blue */
+    --warning: 34 89% 85%; /* Very soft orange. */
+    --error: 10 100% 86%; /* Pale red [Pink tone]. */
+
+    --tw-prose-links: var(--navy-hsl);
+    --card: 0 0% 99%;
+  }
+
+  [data-theme='dark'] {
+    --background: 0 0% 0%; /* black */
+    --background: 223.3 67% 17.8%; /* NAVY */
+    --foreground: 210 40% 98%; /* Light grayish blue. */
+
+    --card: 0 0% 4%; /* black */
+    --card: 223.3 67% 17.8%; /* NAVY */
+    --card-foreground: 210 40% 98%; /* Light grayish blue. */
+
+    --popover: 222.2 84% 4.9%; /*  Very dark (mostly black) blue */
+    --popover-foreground: 210 40% 98%; /* Light grayish blue. */
+
+    --primary: 210 40% 98%; /* Light grayish blue. */
+    --primary-foreground: 222.2 47.4% 11.2%; /*  Very dark (mostly black) blue */
+    --primary-foreground: 223.3 67% 17.8%; /* NAVY */
+
+    --secondary: 217.2 32.6% 17.5%; /* Very dark desaturated blue */
+    --secondary-foreground: 210 40% 98%; /* Light grayish blue. */
+
+    --muted: 217.2 32.6% 17.5%; /* Very dark desaturated blue */
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%; /* Very dark desaturated blue */
+    --accent-foreground: 210 40% 98%; /* Light grayish blue. */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%; /* Light grayish blue. */
+
+    --border: 0, 0%, 15%, 0.8;
+    --input: 217.2 32.6% 17.5%; /* Very dark desaturated blue */
+    --ring: 212.7 26.8% 83.9%;
+
+    --success: 196 100% 14%; /* Very dark blue. */
+    --warning: 34 51% 25%; /* Very dark orange [Brown tone].*/
+    --error: 10 39% 43%; /* Dark moderate red. */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border hyphens-auto;
+  }
+  body {
+    @apply bg-background text-foreground min-h-[100vh] flex flex-col;
+  }
+}
+
+html {
+  opacity: 0;
+}
+
+html[data-theme='dark'],
+html[data-theme='light'] {
+  opacity: initial;
+}
+
+
+.bg-navy {
+  background-color: var(--navy);
+}
+
+.prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+}
+
+
+
+/* svg logo */
+
+#resist-autocratic-despair {
+	--navy:   #0F204C;  /* navy */
+	--orange: #F7781D; /*  orange */
+	--light-gray:  HSL( 0 0% 89.4% );  /* light-gray */
+	--white: #FFFFFF; /* white */
+  --moonmaiden-display: inherit;
+  --moonmaiden-fill: var(--light-gray);
+  --despair-fill: var(--white);
+  --despair-rectangle-fill: var(--navy);
+  --resist-fill: var(--orange);
+  --autocratic-fill: var(--navy);
+	enable-background: new 0 0 800 800;
+
+  .moonmaiden {
+    --moonmaiden-fill: hsl(var(--color-zinc-900));
+    --moonmaiden-fill: var(--color-zinc-100);
+    display: var(--moonmaiden-display);
+    fill: var(--moonmaiden-fill);
+  }
+
+  .despair-rectangle {
+    fill: var(--despair-rectangle-fill);
+  }
+  .resist {
+    fill: var(--resist-fill);
+  }
+  .autocratic { fill: var(--autocratic-fill); }
+  .despair { fill: var(--despair-fill); }
+
+  &.has-background {
+    --despair-rectangle-fill: #fff;
+    --autocratic-fill: var(--white);
+    --despair-fill: var(--navy);
+
+
+  }
+  &.no-moon  {
+    --moonmaiden-display: none;
+
+  }
+}
