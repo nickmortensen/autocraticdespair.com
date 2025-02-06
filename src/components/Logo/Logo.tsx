@@ -12,18 +12,18 @@ interface Props {
 export const Logo = (props: Props) => {
   const { hasMoon, background, loading: loadingFromProps, priority: priorityFromProps, className } = props
 
-  const loading = loadingFromProps || 'lazy'
-  const priority = priorityFromProps || 'low'
+  // const loading = loadingFromProps || 'lazy'
+  // const priority = priorityFromProps || 'low'
 
   return (
 <>
 <svg
 				id="resist-autocratic-despair"
 				className={ cn(
-          className,
          !hasMoon ? 'no-moon' : 'moon',
          background ? 'has-background': ''
         )}
+        data-assigned-class={className}
 
 				version="1.1"
 				xmlns="http://www.w3.org/2000/svg"

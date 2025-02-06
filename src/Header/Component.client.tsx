@@ -35,6 +35,11 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
         <Link href="/" className="w-[14vw] aspect-square" title="link to home page">
           <Logo loading="eager" priority="high" className="invert dark:invert-0" hasMoon={true} background={false} />
         </Link>
+        <div className="backg">
+          <h4>{process.env.NEXT_PUBLIC_SERVER_URL} = NEXT_PUBLIC_SERVER_URL</h4>
+          <h4>{process.env.PAYLOAD_SECRET} = PAYLOAD_SECRET</h4>
+          {process.env.NEXT_WEBSITE_URL} = NEXT_WEBSITE_URL
+        </div>
         <HeaderNav data={data} />
       </div>
     </header>

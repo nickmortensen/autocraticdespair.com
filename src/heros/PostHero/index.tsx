@@ -17,7 +17,7 @@ export const PostHero: React.FC<{
   return (
     <div
       data-id={id}
-      className="relative flex items-end overflow-x-hidden ">
+      className={ cn( "relative flex items-end overflow-x-hidden " ) }>
       <div
         className="container z-10 relative lg:grid lg:grid-cols-[1fr_48rem_1fr] text-white p-4 bg-navy">
         <div className="col-start-1 col-span-1 md:col-start-2 md:col-span-2 ">
