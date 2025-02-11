@@ -18,6 +18,9 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     env:
       NEXT_WEBSITE_URL: ${{secrets.NEXT_WEBSITE_URL}}
+      DATABASE_URI: ${{secrets.DATABASE_URI}}
+      NEXT_PUBLIC_SERVER_URL: ${{secrets.NEXT_PUBLIC_SERVER_URL}}
+      PAYLOAD_SECRET: ${{secrets.PAYLOAD_SECRET}}
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -39,3 +42,4 @@ jobs:
     - name: Ensure we are in the proper Directory for the AutocraticDespair.com website.
       run: cd /home/jones/actions-runner/_work/autocraticdespair.com/autocraticdespair.com
     - run: pm2 restart 0
+
