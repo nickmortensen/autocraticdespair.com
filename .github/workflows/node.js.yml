@@ -38,6 +38,11 @@ jobs:
         cache: 'pnpm'
     - name: Install dependencies
       run: pnpm install
+    - name: write an .env file with commands
+      run: echo "NEXT_PUBLIC_SERVER_URL=${{secrets.NEXT_PUBLIC_SERVER_URL}}" > .env.locally
+      run: echo "PAYLOAD_SECRET=${{secrets.PAYLOAD_SECRET}}" >> .env.locally
+      run: echo "DATABASE_URI=${{secrets.DATABASE_URI}}" >> .env.locally
+      run: echo "NEXT_WEBSITE_URL=${{secrets.NEXT_WEBSITE_URL}}" >> .env.locally
     - run: pnpm build
     - name: Ensure we are in the proper Directory for the AutocraticDespair.com website.
       run: cd /home/jones/actions-runner/_work/autocraticdespair.com/autocraticdespair.com
