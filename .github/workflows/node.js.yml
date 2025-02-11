@@ -38,11 +38,7 @@ jobs:
         cache: 'pnpm'
     - name: Install dependencies
       run: pnpm install
-<<<<<<< HEAD
-    - run: pnpm build --if-present
-=======
     - run: pnpm build
->>>>>>> 1ed4e3cb0a936bd4f7434925e50f81c941eb7c50
     - name: Ensure we are in the proper Directory for the AutocraticDespair.com website.
       run: cd /home/jones/actions-runner/_work/autocraticdespair.com/autocraticdespair.com
     - run: pm2 restart 0
