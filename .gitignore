@@ -17,7 +17,7 @@ node_modules
 .env.local
 
 # Payload default media upload directory
-public/media/
+
 
 public/robots.txt
 public/sitemap*.xml
@@ -77,3 +77,38 @@ _local
 
 /src/components/Schema/index.tsx
 /src/components/Schema
+
+
+*-1400x788.jpg
+*-300x169.jpg
+*-600x338.jpg
+*-900x506.jpg
+
+*-1400x788.webp
+*-300x169.webp
+*-600x338.webp
+*-900x506.webp
+
+*-1400x788.png
+*-300x169.png
+*-600x338.png
+*-900x506.png
+
+*-300x158.jpg
+*-500x500.jpg
+*-600x315.jpg
+*-900x473.jpg
+
+*-300x158.webp
+*-500x500.webp
+*-600x315.webp
+*-900x473.webp
+
+*-300x158.png
+*-500x500.png
+*-600x315.png
+*-900x473.png
+
+image-hero1*.webp
+image-post1*.webp
+image-post2*.webp
