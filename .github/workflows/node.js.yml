@@ -40,9 +40,14 @@ jobs:
       run: pnpm install
     - name: write an .env file with commands
       run: echo "NEXT_PUBLIC_SERVER_URL=${{secrets.NEXT_PUBLIC_SERVER_URL}}" > .env.locally
+    - name: add payload secret to env
       run: echo "PAYLOAD_SECRET=${{secrets.PAYLOAD_SECRET}}" >> .env.locally
+    - name: add database uri to env
       run: echo "DATABASE_URI=${{secrets.DATABASE_URI}}" >> .env.locally
+    - name: add next website
       run: echo "NEXT_WEBSITE_URL=${{secrets.NEXT_WEBSITE_URL}}" >> .env.locally
+    - name: add google tag to env
+      run: echo "NEXT_PUBLIC_GTAG=G-PX8ZPEGWLK" >> .env.locally
     - run: pnpm build
     - name: Ensure we are in the proper Directory for the AutocraticDespair.com website.
       run: cd /home/jones/actions-runner/_work/autocraticdespair.com/autocraticdespair.com
