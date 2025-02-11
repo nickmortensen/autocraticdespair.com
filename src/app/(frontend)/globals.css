@@ -39,6 +39,7 @@
     --orange: #F7781D;
     --orange-hsl: 25 93.2% 54.1%;
     --color-blue-950: var(--navy);
+
     --background: 0 0% 100%;      /* white */
     --foreground: 222.2 84% 4.9%; /* black */
     --foreground: 223.3 67% 17.8%; /* NAVY */
@@ -182,11 +183,19 @@ html[data-theme='light'] {
     --despair-rectangle-fill: #fff;
     --autocratic-fill: var(--white);
     --despair-fill: var(--navy);
-
-
   }
   &.no-moon  {
     --moonmaiden-display: none;
 
+  }
+}
+[data-theme='dark'] {
+    #resist-autocratic-despair {
+
+      &.has-background {
+        --despair-rectangle-fill: #fff;
+        --autocratic-fill: var(--white);
+        --despair-fill: var(--navy);
+      }
   }
 }

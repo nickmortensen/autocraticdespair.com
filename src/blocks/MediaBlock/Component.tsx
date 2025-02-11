@@ -29,6 +29,7 @@ export const MediaBlock: React.FC<Props> = (props) => {
     disableInnerContainer,
   } = props
 
+
   let caption
   if (media && typeof media === 'object') caption = media.caption
 
@@ -65,3 +66,9 @@ export const MediaBlock: React.FC<Props> = (props) => {
     </div>
   )
 }
+
+
+
+
+
+

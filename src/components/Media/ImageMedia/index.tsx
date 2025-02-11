@@ -59,7 +59,7 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
     <picture>
       <NextImage
         alt={alt || ''}
-        className={cn(imgClassName)}
+        className={cn(imgClassName, "saturate-150 hover:saturate-100")}
         fill={fill}
         height={!fill ? height : undefined}
         placeholder="blur"

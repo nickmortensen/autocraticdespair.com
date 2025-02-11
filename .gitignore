@@ -75,3 +75,5 @@ _local
 /.next/
 /out/
 
+/src/components/Schema/index.tsx
+/src/components/Schema
