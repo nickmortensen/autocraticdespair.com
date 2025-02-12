@@ -1,6 +1,9 @@
-# Payload Website Template
+# Autocratic Despair Website
+## Site made with the Payload Website Template
 
-This is the official [Payload Website Template](https://github.com/payloadcms/payload/blob/main/templates/website). Use it to power websites, blogs, or portfolios from small to enterprise. This repo includes a fully-working backend, enterprise-grade admin panel, and a beautifully designed, production-ready website.
+This is the official [AutocraticDespair.com website](https://autocraticdespair.com) which is build with React/NextJs and [Payload CMS](https://payloadcms.com) .
+
+I'm using a self-modified version of the [Payload Website Temaplte](https://github.com/payloadcms/payload/blob/main/templates/website) - Open Source and available to anyone for free.
 
 This template is right for you if you are working on:
 

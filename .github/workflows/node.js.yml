@@ -38,11 +38,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
 
-    - name: Install dependencies
-      run: pnpm install
-
     - name: Ensure we are in the proper Directory for the AutocraticDespair.com website.
       run: cd /home/jones/actions-runner/_work/autocraticdespair.com/autocraticdespair.com
+
+    - name: Install dependencies
+      run: pnpm install
 
     - name: write an .env file with commands
       run: echo "NEXT_PUBLIC_SERVER_URL=${{secrets.NEXT_PUBLIC_SERVER_URL}}" > .env.locally

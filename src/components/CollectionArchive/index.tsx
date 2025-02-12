@@ -11,13 +11,13 @@ export const CollectionArchive: React.FC<Props> = (props) => {
   const { posts } = props
 
   return (
-    <div className={cn('container')}>
+    <div className={cn('container', '')}>
       <div>
         <div className={
           cn(
-            "grid  gap-4 lg:gap-8",
+            "grid gap-4 lg:gap-8",
             "grid-cols-4 sm:grid-cols-8 xl:grid-cols-12",
-            "border-2 border-amber-500",
+            "",
             "",
             "",
             "",
