@@ -21,12 +21,13 @@ jobs:
       DATABASE_URI: ${{secrets.DATABASE_URI}}
       NEXT_PUBLIC_SERVER_URL: ${{secrets.NEXT_PUBLIC_SERVER_URL}}
       PAYLOAD_SECRET: ${{secrets.PAYLOAD_SECRET}}
+
     steps:
-    - name: Checkout
+    - name: Checkout Github Repository
       uses: actions/checkout@v4
 
-    - uses: pnpm/action-setup@v4
-      name: Install pnpm
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4.1.0
       with:
         version: 10
         run_install: false
@@ -36,20 +37,29 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
+
     - name: Install dependencies
       run: pnpm install
-    - name: write an .env file with commands
-      run: echo "NEXT_PUBLIC_SERVER_URL=${{secrets.NEXT_PUBLIC_SERVER_URL}}" > .env.locally
-    - name: add payload secret to env
-      run: echo "PAYLOAD_SECRET=${{secrets.PAYLOAD_SECRET}}" >> .env.locally
-    - name: add database uri to env
-      run: echo "DATABASE_URI=${{secrets.DATABASE_URI}}" >> .env.locally
-    - name: add next website
-      run: echo "NEXT_WEBSITE_URL=${{secrets.NEXT_WEBSITE_URL}}" >> .env.locally
-    - name: add google tag to env
-      run: echo "NEXT_PUBLIC_GTAG=G-PX8ZPEGWLK" >> .env.locally
-    - run: pnpm build
+
     - name: Ensure we are in the proper Directory for the AutocraticDespair.com website.
       run: cd /home/jones/actions-runner/_work/autocraticdespair.com/autocraticdespair.com
-    - run: pm2 restart 0
 
+    - name: write an .env file with commands
+      run: echo "NEXT_PUBLIC_SERVER_URL=${{secrets.NEXT_PUBLIC_SERVER_URL}}" > .env.locally
+
+    - name: add payload secret to env
+      run: echo "PAYLOAD_SECRET=${{secrets.PAYLOAD_SECRET}}" >> .env.locally
+
+    - name: add database uri to env
+      run: echo "DATABASE_URI=${{secrets.DATABASE_URI}}" >> .env.locally
+
+    - name: add next website
+      run: echo "NEXT_WEBSITE_URL=${{secrets.NEXT_WEBSITE_URL}}" >> .env.locally
+
+    - name: add google tag to env
+      run: echo "NEXT_PUBLIC_GTAG=G-PX8ZPEGWLK" >> .env.locally
+
+    - name: build the static website
+      run: pnpm build
+
+    - run: pm2 restart 0
