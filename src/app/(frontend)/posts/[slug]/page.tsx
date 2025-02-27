@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-
+import { cn } from '@/utilities/ui'
 import { RelatedPosts } from '@/blocks/RelatedPosts/Component'
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
   const posts = await payload.find({
     collection: 'posts',
     draft: false,
-    limit: 1000,
+    limit: 20,
     overrideAccess: false,
     pagination: false,
     select: {
@@ -43,7 +43,8 @@ type Args = {
 
 export default async function Post({ params: paramsPromise }: Args) {
   const { isEnabled: draft } = await draftMode()
-  const { slug = '' } = await paramsPromise
+  const { slug = '' }        = await paramsPromise
+
   const url  = '/posts/' + slug
   const post = await queryPostBySlug({ slug })
 
@@ -65,7 +66,14 @@ export default async function Post({ params: paramsPromise }: Args) {
           <RichText className="max-w-[48rem] mx-auto" data={post.content} enableGutter={false} />
           {post.relatedPosts && post.relatedPosts.length > 0 && (
             <RelatedPosts
-              className="mt-12 max-w-[52rem] lg:grid lg:grid-cols-subgrid col-start-1 col-span-3 grid-rows-[2fr]"
+              className={
+                cn(
+                  "mt-12",
+                  "max-w-[52rem]",
+                  "lg:grid grid-rows-[2fr] lg:grid-cols-subgrid",
+                  "col-start-1 col-span-3 "
+                )
+              }
               docs={post.relatedPosts.filter((post) => typeof post === 'object')}
             />
           )}

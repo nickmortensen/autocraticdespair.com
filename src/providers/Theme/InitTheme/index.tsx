@@ -12,7 +12,7 @@ export const InitTheme: React.FC = () => {
   (function () {
     function getImplicitPreference() {
       var mediaQuery = '(prefers-color-scheme: dark)'
-      var mql = window.matchMedia(mediaQuery)
+      var mql        = window.matchMedia(mediaQuery)
       var hasImplicitPreference = typeof mql.matches === 'boolean'
 
       if (hasImplicitPreference) {

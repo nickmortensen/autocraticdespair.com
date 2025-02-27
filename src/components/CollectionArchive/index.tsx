@@ -21,15 +21,16 @@ export const CollectionArchive: React.FC<Props> = (props) => {
             "",
             "",
             "",
-            "",
           )
         }>
+          {/* original had a slight error where it would publish posts in an archive that were set to 'draft' */}
           {posts?.map((result, index) => {
-            if (typeof result === 'object' && result !== null) {
+            if (typeof result === 'object' && result !== null && result._status !== 'draft') {
+            // if (typeof result === 'object' && result !== null ) {
               return (
                 <div className="col-span-4" key={index}>
                   <Card
-                    className="h-full"
+                    className="h-full "
                     doc={result}
                     relationTo="posts"
                     showCategories />

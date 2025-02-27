@@ -5,7 +5,11 @@ import type { Post } from '@/payload-types'
 
 import { Media } from '@/components/Media'
 import { formatAuthors } from '@/utilities/formatAuthors'
-
+/**
+ * @todo -- format this as an article and the author, published, etc. with schema attributes
+ * @param param0
+ * @returns
+ */
 export const PostHero: React.FC<{
   post: Post
 }> = ({ post }) => {
@@ -17,18 +21,42 @@ export const PostHero: React.FC<{
   return (
     <div
       data-id={id}
-      className={ cn( "relative flex items-end overflow-x-hidden " ) }>
+      className={ cn(
+        "post-header-block",
+        "flex flex-col items-end",
+        "aspect-[4/3]",
+        "overflow-show" ) }>
+
+      <div className="post-header-hero w-full aspect-video select-none relative">
+        {
+          heroImage && typeof heroImage !== 'string'
+          && (
+              <Media
+                fill
+                priority
+                imgClassName="-z-10 object-cover" resource={heroImage} />
+            )
+        }
+      </div>
+
       <div
-        className="container z-10 relative lg:grid lg:grid-cols-[1fr_48rem_1fr] text-white p-4 bg-navy">
-        <div className="col-start-1 col-span-1 md:col-start-2 md:col-span-2 ">
-          <div className="lowercase text-xs mb-4">
-            {categories?.map((category, index) => {
-              if (typeof category === 'object' && category !== null) {
-                const { title: categoryTitle } = category
-
-                const titleToUse = categoryTitle || 'Untitled category'
-
-                const isLast = index === categories.length - 1
+        className={
+          cn(
+            "post-header-details",
+            "min-w-full",
+            "flex flex-col",
+            "justify-end content-end",
+            "text-foreground p-4"
+          )
+        }>
+        <div className="post-header-tags">
+          <div className="lowercase text-xs font-extrabold tracking-wider ">
+            {
+              categories?.map((category, index) => {
+                if (typeof category === 'object' && category !== null) {
+                  const { title: categoryTitle } = category
+                  const titleToUse = categoryTitle || 'No Category'
+                  const isLast     = index === categories.length - 1
 
                 return (
                   <React.Fragment key={index}>
@@ -41,38 +69,36 @@ export const PostHero: React.FC<{
             })}
           </div>
 
-          <div className="max-w-full ">
-            <h1 className="mb-6 text-3xl lg:text-4xl font-semibold break-words">{title}</h1>
+          <div className="max-w-full">
+            <h1 className="mb-2 text-2xl md:text-4xl font-bold break-words">{title}</h1>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-4 md:gap-16">
-            {hasAuthors && (
-              <div className="flex flex-col gap-4">
-                <div className="flex flex-col gap-1">
-                  <p className="text-xs">Author</p>
-
-                  <p>{formatAuthors(populatedAuthors)}</p>
+          <div className="visible flex row flex-wrap gap-8 pt-2">
+            {
+              hasAuthors && (
+                <div
+                  itemScope
+                  itemType="https://schema.org/Person"
+                  className="flex flex-col gap-4">
+                  <div className="flex flex-col">
+                    <p className="lowercase text-xs font-extrabold tracking-wide">Author</p>
+                    <p
+                      itemProp="name"
+                      className="text-sm">{formatAuthors(populatedAuthors)}</p>
+                  </div>
                 </div>
+              )
+            }
+            {
+              publishedAt && (
+              <div className="flex flex-col">
+                <p className="lowercase text-xs font-extrabold tracking-wide">Published</p>
+                <time className="text-sm"dateTime={publishedAt}>{formatDateTime(publishedAt)}</time>
               </div>
-            )}
-            {publishedAt && (
-              <div className="flex flex-col gap-1">
-                <p className="text-xs">Published</p>
-
-                <time dateTime={publishedAt}>{formatDateTime(publishedAt)}</time>
-              </div>
-            )}
+              )
+            }
           </div>
         </div>
-      </div>
-      <div className="min-h-[80vh] select-none">
-        {heroImage && typeof heroImage !== 'string' && (
-          <Media
-            fill
-            priority
-            imgClassName="-z-10 object-cover" resource={heroImage} />
-        )}
-        <div className="absolute pointer-events-none right-0 bottom-0 w-full h-full" />
       </div>
     </div>
   )

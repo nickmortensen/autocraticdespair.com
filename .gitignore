@@ -75,8 +75,7 @@ _local
 /.next/
 /out/
 
-/src/components/Schema/index.tsx
-/src/components/Schema
+
 
 
 *-1400x788.jpg
@@ -112,3 +111,7 @@ _local
 image-hero1*.webp
 image-post1*.webp
 image-post2*.webp
+
+
+src/app/(frontend)/(sitemaps)/events-sitemap.xml
+src/components/RichText/index-tutorial.tsx

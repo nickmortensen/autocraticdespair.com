@@ -14,11 +14,11 @@ import { beforeSyncWithSearch } from '@/search/beforeSync'
 import { Page, Post } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
 
-const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
-  return doc?.title ? `${doc.title} | Payload Website Template` : 'Payload Website Template'
+const generateTitle: GenerateTitle<Post | Page > = ({ doc }) => {
+  return doc?.title ? `${doc.title} | Autocratic Despair` : 'Autocratic Despair Website'
 }
 
-const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
+const generateURL: GenerateURL<Post | Page  > = ({ doc }) => {
   const url = getServerSideURL()
 
   return doc?.slug ? `${url}/${doc.slug}` : url
@@ -51,10 +51,7 @@ export const plugins: Plugin[] = [
     collections: ['categories'],
     generateURL: (docs) => docs.reduce((url, doc) => `${url}/${doc.slug}`, ''),
   }),
-  seoPlugin({
-    generateTitle,
-    generateURL,
-  }),
+  seoPlugin({ generateTitle, generateURL, }),
   formBuilderPlugin({
     fields: {
       payment: false,

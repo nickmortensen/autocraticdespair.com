@@ -8,7 +8,7 @@ import type { Post } from '@/payload-types'
 
 import { Media } from '@/components/Media'
 
-export type CardPostData = Pick<Post, 'id' | 'slug' | 'categories' | 'meta' | 'title'>
+export type CardPostData = Pick<Post, 'id' | 'slug' | 'categories' | 'meta' | 'title' | '_status' >
 
 export const Card: React.FC<{
   alignItems?: 'center'
@@ -19,7 +19,8 @@ export const Card: React.FC<{
   title?: string
 }> = (props) => {
   const { card, link } = useClickableCard({})
-  const { className, doc, relationTo, showCategories, title: titleFromProps } = props
+  const { doc, relationTo, showCategories, title: titleFromProps } = props
+  const {className} = props
 
   const { id, slug, categories, meta, title } = doc || {}
   const { description, image: metaImage } = meta || {}
@@ -28,7 +29,6 @@ export const Card: React.FC<{
   const titleToUse = titleFromProps || title
   const sanitizedDescription = description?.replace(/\s/g, ' ') // replace non-breaking space with white space
   const href = `/${relationTo}/${slug}`
-
   return (
     <article
       data-id={id}
@@ -37,16 +37,13 @@ export const Card: React.FC<{
         'rounded-lg overflow-hidden',
         'bg-card hover:cursor-pointer',
         className,
+
       )}
       ref={card.ref}
     >
       <div className="relative w-full border-b-1 border-blue-950 ">
-        {
-          !metaImage && <div className="">No image</div>
-        }
-        {
-          metaImage && typeof metaImage !== 'string' && <Media resource={metaImage} size="33vw" />
-        }
+        { !metaImage && <div className="">No image</div> }
+        { metaImage && typeof metaImage !== 'string' && <Media resource={metaImage} size="33vw" /> }
       </div>
       <div className="p-4 py-2 pb-0.5">
         {
@@ -54,7 +51,7 @@ export const Card: React.FC<{
             <div className="uppercase text-sm mb-4">
             {
               showCategories && hasCategories && (
-                <div className="lowercase font-bold text-xs tracking-wide text-red">
+                <div className="lowercase font-bold text-xs tracking-wide">
                   {
                     categories?.map((category, index) => {
                       if (typeof category === 'object') {
@@ -80,7 +77,7 @@ export const Card: React.FC<{
         {titleToUse && (
           <div className="prose my-1.5 ">
             <h3 className="leading-5">
-              <Link className="not-prose" href={href} ref={link.ref}>
+              <Link className="not-prose hover:text-red-600" href={href} ref={link.ref}>
                 {titleToUse}
               </Link>
             </h3>

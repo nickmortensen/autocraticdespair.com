@@ -28,6 +28,7 @@ export const ArchiveBlock: React.FC<
 
     const fetchedPosts = await payload.find({
       collection: 'posts',
+
       depth: 1,
       limit,
       ...(flattenedCategories && flattenedCategories.length > 0
@@ -40,6 +41,7 @@ export const ArchiveBlock: React.FC<
           }
         : {}),
     })
+
 
     posts = fetchedPosts.docs
   } else {
@@ -55,7 +57,7 @@ export const ArchiveBlock: React.FC<
   return (
     <div className="my-16" id={`block-${id}`}>
       {introContent && (
-        <div className="container mb-16">
+        <div className="container mb-16 border-2">
           <RichText className="ml-0 max-w-[48rem]" data={introContent} enableGutter={false} />
         </div>
       )}

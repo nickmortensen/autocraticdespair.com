@@ -27,6 +27,10 @@ const collectionLabels = {
     plural: 'Projects',
     singular: 'Project',
   },
+  events: {
+    plural: 'Events',
+    singular: 'Event',
+  },
 }
 
 const Title: React.FC = () => <span>Dashboard</span>
@@ -48,7 +52,7 @@ export const AdminBar: React.FC<{
 
   return (
     <div
-      className={cn(baseClass, 'py-2 bg-navy text-white', {
+      className={cn(baseClass, 'py-2 bg-blue-950 text-white', {
         block: show,
         hidden: !show,
       })}
