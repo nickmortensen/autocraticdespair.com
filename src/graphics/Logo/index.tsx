@@ -1,4 +1,4 @@
-
+// this shows up on the login page
 const css = `
 
 
@@ -13,7 +13,7 @@ const css = `
   height: 250px;
 }
   .moonmaiden { fill: var(--moonmaiden-fill) }
-  .despair { fill: var(--despair-fill) }
+  .despair path { fill: #000000 }
   .autocratic { fill: var(--autocratic-fill) }
   .resist { fill: var(--resist-fill) }
   .despair-rectangle { fill: var(--despair-rectangle-fill) }

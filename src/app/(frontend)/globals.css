@@ -137,9 +137,9 @@
     --error: 10 39% 43%; /* Dark moderate red. */
     --theme-bg: rgb(40 80 120);
 
-    --despair-rectangle-fill: #fff;
-        --autocratic-fill: var(--white);
-        --despair-fill: var(--navy);
+    /* --despair-rectangle-fill: #fff; */
+    /* --autocratic-fill: var(--white); */
+    /* --despair-fill: var(--navy); */
   }
 }
 
@@ -176,8 +176,8 @@ html[data-theme='light'] {
 	enable-background: new 0 0 800 800;
 
   .moonmaiden {
-    --moonmaiden-fill: hsl(var(--color-zinc-900));
-    --moonmaiden-fill: var(--color-zinc-100);
+    /* --moonmaiden-fill: hsl(var(--color-zinc-900));
+    --moonmaiden-fill: var(--color-zinc-100); */
     display: var(--moonmaiden-display);
     fill: var(--moonmaiden-fill);
   }
@@ -192,9 +192,9 @@ html[data-theme='light'] {
   .despair { fill: var(--despair-fill); }
 
   &.has-background {
-    --despair-rectangle-fill: #fff;
+    /* --despair-rectangle-fill: #fff;
     --autocratic-fill: var(--white);
-    --despair-fill: var(--navy);
+    --despair-fill: var(--navy); */
   }
   &.no-moon  {
     --moonmaiden-display: none;
@@ -245,4 +245,10 @@ em > strong {
 }
 .list-item-checkbox input {
   @apply mr-2;
+}
+
+.has-dark-background {
+  --autocratic-fill: white;
+  --despair-fill: var(--navy);
+  --despair-rectangle-fill: white;
 }

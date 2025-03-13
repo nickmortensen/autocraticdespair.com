@@ -2,8 +2,8 @@ import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
 
-export const Events: CollectionConfig = {
-  slug: 'events',
+export const Products: CollectionConfig = {
+  slug: 'products',
   access: {
     admin: authenticated,
     create: authenticated,
@@ -36,21 +36,21 @@ export const Events: CollectionConfig = {
     },
   },
   labels: {
-    singular: 'event',
-    plural: 'Events',
+    singular: 'Product',
+    plural: 'Products',
   },
   admin: {
-    defaultColumns: ['location'],
-    group: 'Events',
-    useAsTitle: 'location',
-    description: 'Autocratic Despair Dialogues Events'
+    defaultColumns: ['Product Name'],
+    group: 'Products',
+    useAsTitle: 'Product Name',
+    description: 'Products for Sale'
   },
   auth: false, // adds an email and password field on the admin end, we don't want that
   fields: [
     {
-      name: 'eventname',
+      name: 'Product Name',
       type: 'text',
-      defaultValue: 'Autocratic Despair Dialogues'
+      defaultValue: 'Product Name'
     },
     {
       name: 'slug',
@@ -59,41 +59,41 @@ export const Events: CollectionConfig = {
         position: 'sidebar',
       }
     },
-    {
-      name: 'subtitle',
-      type: 'text',
-    },
-    {
-      name: 'location',
-      type: 'text',
-      admin: {
-        placeholder: 'Name of the Venue'
-      }
-    },
-    {
-      name: 'address',
-      type: 'text',
-      admin: {
-        placeholder: 'StreetAddress, City State Zip',
-        position: 'sidebar'
-      }
-    },
+    // {
+    //   name: 'subtitle',
+    //   type: 'text',
+    // },
+    // {
+    //   name: 'location',
+    //   type: 'text',
+    //   admin: {
+    //     placeholder: 'Name of the Venue'
+    //   }
+    // },
+    // {
+    //   name: 'address',
+    //   type: 'text',
+    //   admin: {
+    //     placeholder: 'StreetAddress, City State Zip',
+    //     position: 'sidebar'
+    //   }
+    // },
     {
       name: 'description',
       type: 'richText',
     },
-    {
-      name: 'eventdate',
-      type: 'date',
-      admin: {
-        date: {
-          pickerAppearance: 'dayAndTime',
-          displayFormat: 'yyyy-MM-dd @ hh:mm aa',
-          timeFormat: 'hhmm',
-        },
-        position: 'sidebar'
-      },
-    },
+    // {
+    //   name: 'eventdate',
+    //   type: 'date',
+    //   admin: {
+    //     date: {
+    //       pickerAppearance: 'dayAndTime',
+    //       displayFormat: 'yyyy-MM-dd @ hh:mm aa',
+    //       timeFormat: 'hhmm',
+    //     },
+    //     position: 'sidebar'
+    //   },
+    // },
     {
       name: 'heroImage',
       type: 'upload',

@@ -9,7 +9,7 @@ to
 *.backup
 
 build
-dist / media
+dist/media
 node_modules
 .env
 .next
@@ -17,7 +17,6 @@ node_modules
 .env.local
 
 # Payload default media upload directory
-
 
 public/robots.txt
 public/sitemap*.xml
@@ -32,8 +31,6 @@ public/sitemap*.xml
 *.tsbuildinfo
 next-env.d.ts
 
-
-
 public/icons/resist_square.svg
 
 # debug
@@ -45,7 +42,7 @@ yarn-error.log*
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 .DS_Store
 */.DS_Store
-_local
+_local/ignore
 # misc
 *.pem
 
@@ -56,7 +53,6 @@ docker-compose.yml
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 .DS_Store
 */.DS_Store
-_local
 # dependencies
 /node_modules
 /.pnp

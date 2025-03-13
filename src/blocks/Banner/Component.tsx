@@ -18,9 +18,9 @@ export const BannerBlock: React.FC<Props> = ({ className, content, style }) => {
           'p-4',
           'border-1',
           {
-            'border-border bg-card dark:bg-accent-foreground/10 dark:border-foreground': style === 'info',
+            'border-border bg-card text-foreground': style === 'info',
             'border-error bg-error/30':     style === 'error',
-            'border-success bg-success/40 text-foreground dark:bg-red-500': style === 'success',
+            'border-success bg-success/40 text-foreground': style === 'success',
             'border-warning bg-warning/30': style === 'warning',
           })}
       >

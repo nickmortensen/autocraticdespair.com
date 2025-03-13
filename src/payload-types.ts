@@ -755,6 +755,7 @@ export interface Event {
     [k: string]: unknown;
   } | null;
   eventdate?: string | null;
+  heroImage?: (number | null) | Media;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -1324,6 +1325,7 @@ export interface EventsSelect<T extends boolean = true> {
   address?: T;
   description?: T;
   eventdate?: T;
+  heroImage?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
