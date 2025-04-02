@@ -20,8 +20,6 @@ export async function Footer() {
           <Logo
           className={
             cn(
-              "moonmaiden-logo",
-              "has-dark-background",
               "",
               "",
               "",

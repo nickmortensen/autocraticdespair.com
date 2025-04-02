@@ -19,7 +19,8 @@ export const Logo = (props: Props) => {
 				id="resist-autocratic-despair"
 				className={ cn(
          !hasMoon ? 'no-moon' : 'moon',
-         background ? 'has-dark-background': ''
+         background ? 'has-dark-background': '',
+         className
         )}
 				version="1.1"
 				xmlns="http://www.w3.org/2000/svg"

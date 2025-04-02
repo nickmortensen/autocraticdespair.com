@@ -114,14 +114,14 @@ type BookProperties = {
  * @param param0
  * @returns
  */
-const Book = ({
+export const Book = ({
   title="Resist Autocratic Despair",
   subtitle="21 Things You Can Do to Survive Authoritarianism",
   author="Nick Mortensen"
 }: BookProperties) => {
   return (
     <div itemProp="mainEntity" itemScope itemType="https://schema.org/Book">
-      <img itemProp="image" src="catcher-in-the-rye-book-cover.jpg" alt="cover art: red horse, city in background"/>
+
       <span itemProp="name">{title}: <em>{subtitle}</em></span> -
       <link itemProp="bookFormat" href="https://schema.org/Paperback">Mass Market Paperback</link>
       by <a itemProp="author" href="/author/jd_salinger.html">{author}</a>
@@ -149,10 +149,10 @@ Reviews:
 
   <div itemProp="review" itemScope itemType="https://schema.org/Review">
       <span itemProp="reviewRating">4</span> stars -
-      <b>"<span itemProp="name">A good read.</span>" </b>
+      <b><span itemProp="name">A good read.</span> </b>
       by <span itemProp="author">Bob Smith</span>,
       Written on <meta itemProp="datePublished" content="2006-06-15">June 15, 2006</meta>
-      <span itemProp="reviewBody">Catcher in the Rye is a fun book. It's a good book to read.</span>
+      <span itemProp="reviewBody">Catcher in the Rye is a fun book. It is a good book to read.</span>
   </div>
 
 </div>
@@ -165,22 +165,4 @@ type BookReviewProperties = {
   longReview: string,
   reviewDate: string,
   reviewerName: string
-}
-const BookReview = ({
-  starQuantity,
-  shortReview,
-  longReview,
-  reviewDate,
-  reviewerName
-}: BookReviewProperties ) => {
-  return (
-
-  <div itemProp="review" itemScope itemType="https://schema.org/Review">
-    <span itemProp="reviewRating">{starQuantity}</span> stars -
-    <b>"<span itemProp="name">{shortReview}</span>"</b>
-    by <span itemProp="author">{reviewerName}</span>,
-    Written on <meta itemProp="datePublished" content={reviewDate}>{reviewDate}</meta>
-    <span itemProp="reviewBody">{longReview}</span>
-  </div>
-  )
 }

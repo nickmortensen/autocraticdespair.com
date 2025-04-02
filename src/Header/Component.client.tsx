@@ -6,7 +6,8 @@ import React, { useEffect, useState } from 'react'
 
 import type { Header } from '@/payload-types'
 
-import { Logo } from '@/components/Logo/Logo'
+// import { Logo } from '@/components/Logo/Logo'
+import { Logo } from '@/graphics/Logo'
 import { HeaderNav } from './Nav'
 
 interface HeaderClientProps {
@@ -30,19 +31,15 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
   }, [headerTheme])
 
   return (
-    // <header className="w-full px-8 border-b border-zinc-200 relative z-20   " {...(theme ? { 'data-theme': theme } : {})}>
-    <header className="w-full px-8 border-b border-zinc-200 relative z-20   ">
-      <div className="py-4 flex justify-between items-stretch ">
-        <Link href="/" className="w-[14vw] aspect-square" title="link to home page">
-          <Logo
-            loading="eager"
-            priority="high"
-            className=""
-            hasMoon={true}
-            background={false} />
+    <header className="w-full px-8 border-b border-zinc-200 relative z-20">
+      <div className="w-full p-2 flex justify-between h-[120px] items-end">
+        <Link href="/" className="h-full aspect-square " title="link to home page">
+          <Logo />
         </Link>
 
-        <HeaderNav data={data} />
+        <HeaderNav
+
+          data={data} />
       </div>
     </header>
   )
