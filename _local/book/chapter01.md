@@ -682,3 +682,20 @@ The concept of "unreality" in the context of fascism, as discussed by scholars l
 * By blurring the lines between truth and falsehood, fascism seeks to create a state where anything is possible, and the regime's power is absolute.
 
 This is a very important concept to understand, as it is a key component of how fascist movements gain and retain power.
+
+
+
+##  4 Quadrants of the Citizenry in an Autocratic regime.
+In any Autocracy - you can split the citizenry into quadrants based on their loyalty to the regime based on their performance.  The quadrants are as follows:
+1. Publicly for the regime. Privately for the regime.
+ * This consists of the True Believers that just cannot be reached.  These individuals - while fellow citizens - are not worth occupying your thoughts with except to periodically check in on to see how they are reacting to current lines of bullshit. There is no point in trying to convince them of anything.
+2. Publicly for the regime. Privately against the regime.
+ * Fellow citizens that are not actually doing that badly, all things considered.  They would prefer things to be different, sure, but they do not see any reason at the moment to stick their necks out to pronounce that publicly.  They've got too much to lose and are willing to live with a bit of discomfort if it keeps them from drawing the attention of the regime.  These people can be convinced to publicly come out against the regime in the right circumstances.  This is the most important and also the largest quadrant.
+3. Publicly against the regime. Privately for the regime.
+ * This group of people exists to undermine efforts at organizing against the Autocracy.  Most often they were at one point both privately and publicly against the regime, but have been compromised in some manner.  This is a dangerous group in any situation and the fact that this group exists in any significant number is a testament to the precarious position of any Authoritarian regime.
+4. Publicly against the regime. Privately against the regime.
+ * This is the most important group because it is comprised of people who are willing to risk something to remain in opposition to the regime.  These are the people you will see at protests and the people who organize the protests.
+
+The success of any resistance movement is in convincing people from the "Publicly for/Privately against" quadrant to act.  Any resistance movement that finds a way to appeal to this quadrant has a chance at being successful.  Any resistance movement that ignores this quadrant is not a serious movement.
+
+Authoritarians know this and that is why there typically exists a combination of rewards for this grop to remain publicly loyal or neitral and punishment for anything the regime believes is less than loyal.
